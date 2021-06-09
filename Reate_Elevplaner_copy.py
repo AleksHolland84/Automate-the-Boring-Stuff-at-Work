@@ -1,5 +1,4 @@
-#!C:\Users\alek1024\OneDrive - Viborg Skoler\2020-2021 Lærermappe\Elevplaner_\.Elevplan_Copy@3.9.2\Scripts\python.exe
-# elevplan_copy.py Copies a base-file and save one file 
+# Elevplan_copy.py Copies a base-file and save one file 
 # for each member in a list
 
 import shutil, os, re, datetime
