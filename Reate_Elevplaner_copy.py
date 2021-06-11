@@ -11,6 +11,7 @@ base_file = 'skabelon.docx'
 subfolder = 'Elevplaner'
 klasse = input('Hvilken klasse?: ')
 elever = 'elev liste.txt'
+f_type = '.txt'
 
 
 path = '' # will contain path to subfolder
@@ -29,24 +30,31 @@ def create_folder():
     else:
         path = new_folder_path
 
-def create_list(filename):
+def create_list(filename, f_type):
     filetype = re.compile(f'{f_type}$')
     # takes a file as an argument and returns a list
     # contaning all the names in the file
     names = []
     filename = input("Filnavn på liste af elever?: ")
     mo = filetype.search(filename)
-    filename = filename + '.txt'
     try:
         if filename == '':
-            filename = elever  
-        else:
+            filename = elever 
+        elif mo:
+            # if .txt in filename
             pass
+        else: 
+            filename = filename + '.txt'
         with open(filename, 'r', encoding='utf-8') as file:
             for name in file:
                 names.append(name.strip(' \n\t'))
         return names
-except FileNotFoundError as fnf_error:
+    except FileNotFoundError as fnf_error:
+        print(fnf_error)
+        print(f"There's no file named: {filename}")
+    except AttributeError as e:
+        print(e)
+        print('program error with regex at createlist() ')
     
 
 def edit_header(file_name, name):
@@ -93,7 +101,7 @@ def edit_header_tester(file_name, name):
 
 
 if __name__ == '__main__':
-    elever = create_list(elever)
+    elever = create_list(elever, f_type)
 
     create_folder()
 
