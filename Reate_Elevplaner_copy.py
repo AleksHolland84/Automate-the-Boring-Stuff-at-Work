@@ -58,45 +58,35 @@ def create_list(filename, f_type):
     
 
 def edit_header(file_name, name):
-    doc = Document(file_name)
-    doc.tables #a list of all tables in document
-    if doc.tables[0].cell(1,1).text == '':
+    try:
+        doc = Document(file_name)
+        doc.tables #a list of all tables in document
         doc.tables[0].cell(1,1).text = name
-
-        if doc.tables[0].cell(2,1).text == '':
-            doc.tables[0].cell(2,1).text = klasse
-
-            if doc.tables[0].cell(3,1).text == '':
-                doc.tables[0].cell(3,1).text = str((dater().year)-1) + '-' + str(dater().year) 
+        doc.tables[0].cell(2,1).text = klasse
+        doc.tables[0].cell(3,1).text = str((dater().year)-1) + '-' + str(dater().year) 
         doc.save(file_name)
-    else:
-        print('Cell not empty!')
+
+    except docx.opc.exceptions.PackageNotFoundError as docx_error:
+        print(docx_error)
+        print(f'*** ERROR at edit_header() - {file_name} not found or is all ready opened***')
 
 
 def copy_frame(folder, base_file, new_path, name):
-    # copies a base_file and saves it as elevplan + name of the name-argument
+    # copies a base_file and saves it as documentnavn + year + name of the name-argument
     foldername = os.path.abspath(new_path)
     new_file_path = foldername + f'\\{documentnavn} {dater().year} {name}.docx'
     try:
         if not os.path.exists(new_file_path): # check if file exists
             shutil.copy(os.path.join(folder, base_file), new_file_path)
             edit_header(new_file_path, name)
+            print(f'Created {os.path.basename(new_file_path)}')
         else:
             print(f"{os.path.basename(new_file_path)} ALLREADY EXISTS")
     except FileNotFoundError as fnf_error:
         print(fnf_error)
+        print('*** ERROR at copy_frame() ***')
 
-def edit_header_tester(file_name, name):
-    doc = Document(file_name)
-    doc.tables #a list of all tables in document
 
-    for row in doc.tables[0].rows:
-        for cell in row.cells:
-            if cell.text == 'Elev:':
-                print(cell)
-                print('test')
-            else:
-                print(cell.text)
 
 
 
