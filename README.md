@@ -25,3 +25,8 @@ After that you should be able to run the .py script
 Run the script by dobel clicking on the Elevplaner_copy.py file
 It will first ask you what class you wish to create - this is used for the folder name and also as an input for the endividual files.
 Then it will ask for a list of names. If you just edited the elever.txt file, write elever.txt or elever and press enter.
+
+```cmd
+Hvilken klasse?: test
+Filnavn på liste af elever?: elever
+```
