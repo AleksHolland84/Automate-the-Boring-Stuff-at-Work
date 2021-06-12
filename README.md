@@ -27,6 +27,6 @@ It will first ask you what class you wish to create - this is used for the folde
 Then it will ask for a list of names. If you just edited the elever.txt file, write elever.txt or elever and press enter.
 
 ```cmd
-Hvilken klasse?: test
+Hvilken klasse?: 7b
 Filnavn på liste af elever?: elever
 ```
