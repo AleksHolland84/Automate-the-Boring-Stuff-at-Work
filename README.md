@@ -8,8 +8,10 @@ open a command-prompt and cd into the directory of the requirements.txt file
 Open command-prompt
 ```
 win + r
-then type "cmd" and press enter
 ```
+then type "cmd" and press enter
+
+In the command prompt change directory to the downloaded directory
 
 ```cmd
 cd c:\\users\<username>\Downloads
