@@ -81,7 +81,7 @@ def copy_frame(folder, base_file, new_path, name):
             edit_header(new_file_path, name)
             print(f'Created {os.path.basename(new_file_path)}')
         else:
-            print(f"{os.path.basename(new_file_path)} ALLREADY EXISTS")
+            print(f"{os.path.basename(new_file_path)} ALREADY EXISTS")
     except FileNotFoundError as fnf_error:
         print(fnf_error)
         print('*** ERROR at copy_frame() ***')
