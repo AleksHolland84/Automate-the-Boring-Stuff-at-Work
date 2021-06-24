@@ -20,7 +20,7 @@ Then type "cmd" and press enter
 In the command prompt, change directory to the downloaded files
 
 ```cmd
-cd C:\Users\alek1024\Downloads\Automate-the-Boring-Stuff-at-Work-main
+cd C:\Users\<username>\Downloads\Automate-the-Boring-Stuff-at-Work-main
 ``` 
 
 Then install the required packages with pip3
