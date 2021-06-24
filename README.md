@@ -7,9 +7,9 @@ https://www.python.org/downloads/
 
 Download the .ZIP and extract it.
 *Or copy the raw .py script, skabelon.docx, elever.txt, and requirements.txt file.
-You can move all the files into a dorectory of your choice, but they have to be in the same directory.*
+You can move all the files into a directory of your choice, but they have to be in the same directory.*
 
-After downloading the files open a command-prompt and cd into the directory of the requirements.txt file
+After downloading the files open a command-prompt and change directory (CD) into the directory of the requirements.txt file
 
 #### Open command-prompt
 ```
