@@ -68,7 +68,7 @@ def edit_header(file_name, name):
 
     except docx.opc.exceptions.PackageNotFoundError as docx_error:
         print(docx_error)
-        print(f'*** ERROR at edit_header() - {file_name} not found or is all ready opened***')
+        print(f'*** ERROR at edit_header() - {file_name} not found or is already opened***')
 
 
 def copy_frame(folder, base_file, new_path, name):
